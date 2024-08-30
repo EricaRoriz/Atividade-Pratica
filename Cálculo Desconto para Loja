@@ -1,0 +1,32 @@
+# A. Mensagem de boas-vindas
+print('Bem-vindo à loja da Érica Marta Roriz - RU: 4573966.')
+
+# B. Entrada do valor unitário e da quantidade do produto
+valor_unitario = float(input('Digite o valor unitário do produto: '))
+quantidade = int(input('Digite a quantidade do produto: '))
+
+# C. Cálculo do valor total sem desconto
+valor_total_sem_desconto = valor_unitario * quantidade
+
+# D. Implementação do desconto conforme as condições especificadas
+if valor_total_sem_desconto < 2500.00:
+    desconto = 0
+    desconto_porcentagem = '0%'
+elif 2500.00 <= valor_total_sem_desconto < 6000.00:
+    desconto = 0.04
+    desconto_porcentagem = '4%'
+elif 6000.00 <= valor_total_sem_desconto < 10000.00:
+    desconto = 0.07
+    desconto_porcentagem = '7%'
+else:
+    desconto = 0.11
+    desconto_porcentagem = '11%'
+
+# E. Cálculo do valor total com desconto
+valor_desconto = valor_total_sem_desconto * desconto
+valor_total_com_desconto = valor_total_sem_desconto - valor_desconto
+
+# D. Mensagem com os valores calculados
+print('O valor total sem desconto foi: {:.2F}'.format(valor_total_sem_desconto))
+print('Valor do desconto aplicado: {:.2F}'.format(valor_desconto))
+print('O valor total com desconto foi ({} de desconto): {:.2F}'.format(desconto_porcentagem, valor_total_com_desconto,))
